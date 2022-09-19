@@ -1,0 +1,29 @@
+version: "3.9"
+
+services:
+  api:
+    build: .
+    container_name: "api_container"
+    command: ['sh', 'start_app.sh']
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/src
+    depends_on:
+      - db
+      - redis
+
+  db:
+    image: postgres:latest
+    container_name: "db_container"
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env
+  redis:
+    image: redis:latest
+    container_name: "redis"
+    ports:
+      - "6379:6379"

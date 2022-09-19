@@ -1,0 +1,15 @@
+fastapi
+pydantic
+pydantic[email]
+sqlalchemy
+psycopg2
+uvicorn
+alembic
+aioredis
+httpx
+pytest
+requests
+flake8
+mypy
+trio
+sqlalchemy-stubs
